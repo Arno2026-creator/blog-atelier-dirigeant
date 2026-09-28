@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guide de mise en ligne — L'Atelier du Dirigeant Blog</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+    .guide-body { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
+    .step-block { background: var(--cream-light); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-bottom: 24px; }
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--marine); color: #fff; border-radius: 50%; font-weight: 800; font-size: 1rem; margin-bottom: 12px; }
+    .step-block h2 { font-size: 1.15rem; margin-bottom: 10px; }
+    .step-block ol, .step-block ul { padding-left: 1.4rem; }
+    .step-block li { font-size: 0.92rem; color: var(--text-light); margin-bottom: 6px; line-height: 1.7; }
+    .highlight { background: var(--marine); color: #fff; padding: 3px 8px; border-radius: 4px; font-family: monospace; font-size: 0.88rem; }
+    .badge-free { background: #F0FFF4; color: #276749; border: 1px solid #C6F6D5; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+    .badge-important { background: #FFF5F5; color: #C53030; border: 1px solid #FED7D7; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a class="site-logo" href="index.html">
+<div class="logo-mark">AD</div>
+<div class="logo-text"><span class="logo-name">L'Atelier du Dirigeant</span><span class="logo-tagline">Guide de mise en ligne</span></div>
+</a>
+</div>
+</header>
+<div class="guide-body">
+<h1 style="margin-bottom:8px;">🚀 Mettre votre blog en ligne</h1>
+<p style="color:var(--text-muted);margin-bottom:36px;">Guide complet — hébergement gratuit sur Netlify · Ajouter des articles · Gérer les ressources</p>
+<!-- PARTIE 1 : MISE EN LIGNE -->
+<h2 style="font-size:1.4rem;color:var(--marine);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--gold);">Partie 1 — Mettre le blog en ligne gratuitement <span class="badge-free">100 % gratuit</span></h2>
+<div class="step-block">
+<div class="step-num">1</div>
+<h2>Créer un compte Netlify</h2>
+<ol>
+<li>Ouvrez votre navigateur et rendez-vous sur <strong>www.netlify.com</strong></li>
+<li>Cliquez sur <strong>Sign up</strong> (inscription gratuite)</li>
+<li>Choisissez <strong>Sign up with email</strong></li>
+<li>Saisissez votre adresse email et choisissez un mot de passe</li>
+<li>Validez votre email (vérifiez votre boîte mail)</li>
+<li>Vous arrivez sur votre tableau de bord Netlify</li>
+</ol>
+</div>
+<div class="step-block">
+<div class="step-num">2</div>
+<h2>Mettre le blog en ligne (glisser-déposer)</h2>
+<ol>
+<li>Dans votre tableau de bord Netlify, faites défiler jusqu'à la section <strong>"Want to deploy a new site without connecting to Git?"</strong></li>
+<li>Vous voyez une zone avec le texte <strong>"Drag and drop your site output folder here"</strong></li>
+<li>Ouvrez l'explorateur de fichiers de votre ordinateur</li>
+<li>Localisez le dossier <strong>blog-atelier-dirigeant</strong> (le dossier que vous avez téléchargé)</li>
+<li><strong>Faites glisser ce dossier entier</strong> dans la zone de dépôt Netlify</li>
+<li>Netlify déploie automatiquement votre blog — attendez 30 secondes</li>
+<li>Netlify vous donne une URL temporaire du type : <span class="highlight">random-name-123.netlify.app</span></li>
+<li>Cliquez sur cette URL pour vérifier que votre blog s'affiche correctement</li>
+</ol>
+<div style="background:#E6FFFA;border:1px solid #81E6D9;border-radius:6px;padding:14px;margin-top:14px;">
+<strong style="color:#234E52;">✅ Votre blog est en ligne !</strong> Il est accessible depuis n'importe quel appareil dans le monde entier.
+    </div>
+</div>
+<div class="step-block">
+<div class="step-num">3</div>
+<h2>Connecter votre nom de domaine latelierdudirigeant.fr</h2>
+<p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Pour que votre blog soit accessible à <strong>latelierdudirigeant.fr/blog</strong>, vous avez deux options :</p>
+<p style="font-weight:700;color:var(--marine);margin-bottom:8px;">Option A — Sous-domaine blog.latelierdudirigeant.fr (plus simple)</p>
+<ol>
+<li>Dans Netlify, cliquez sur <strong>Domain settings</strong></li>
+<li>Cliquez sur <strong>Add custom domain</strong></li>
+<li>Saisissez : <span class="highlight">blog.latelierdudirigeant.fr</span></li>
+<li>Connectez-vous à votre espace client IONOS</li>
+<li>Allez dans <strong>Domaines &gt; DNS &gt; Gérer les zones DNS</strong></li>
+<li>Ajoutez un enregistrement CNAME : <span class="highlight">blog</span> → <span class="highlight">votre-site.netlify.app</span></li>
+<li>Attendez 15 à 30 minutes — votre blog est accessible à blog.latelierdudirigeant.fr</li>
+</ol>
+<p style="font-weight:700;color:var(--marine);margin:16px 0 8px;">Option B — Contacter le support IONOS</p>
+<p style="font-size:0.88rem;color:var(--text-light);">Appelez le support IONOS et demandez-leur d'ajouter un enregistrement CNAME pour le sous-domaine "blog" pointant vers votre URL Netlify. Ils le feront en 5 minutes.</p>
+</div>
+<!-- PARTIE 2 : AJOUTER UN ARTICLE -->
+<h2 style="font-size:1.4rem;color:var(--marine);margin:36px 0 20px;padding-bottom:10px;border-bottom:2px solid var(--gold);">Partie 2 — Publier un nouvel article</h2>
+<div class="step-block">
+<div class="step-num">1</div>
+<h2>Dupliquer un article existant</h2>
+<ol>
+<li>Ouvrez le dossier <strong>blog-atelier-dirigeant/articles/</strong> sur votre ordinateur</li>
+<li>Copiez le fichier <strong>reprendre-commerce-erreurs.html</strong></li>
+<li>Collez-le dans le même dossier</li>
+<li>Renommez-le avec le sujet de votre article, en minuscules et sans espaces<br/>Exemple : <span class="highlight">gestion-stock-commerce.html</span></li>
+</ol>
+</div>
+<div class="step-block">
+<div class="step-num">2</div>
+<h2>Modifier le contenu de l'article</h2>
+<p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">Ouvrez le fichier HTML avec un éditeur de texte. Sur Windows : clic droit → "Ouvrir avec" → Bloc-notes. Sur Mac : clic droit → "Ouvrir avec" → TextEdit.</p>
+<p style="font-weight:700;color:var(--marine);margin-bottom:8px;">Éléments à modifier :</p>
+<ul>
+<li><span class="highlight">&lt;title&gt;</span> — Le titre de l'onglet navigateur (pour le SEO)</li>
+<li><span class="highlight">&lt;meta name="description"&gt;</span> — La description Google (155 caractères max)</li>
+<li><span class="highlight">&lt;h1&gt;</span> — Le titre principal de l'article</li>
+<li>La date, la catégorie, le temps de lecture</li>
+<li>Le contenu entre les balises <span class="highlight">&lt;article class="article-content"&gt;</span> et <span class="highlight">&lt;/article&gt;</span></li>
+</ul>
+<div style="background:#FFFBEB;border:1px solid #F6E05E;border-radius:6px;padding:14px;margin-top:14px;">
+<strong>💡 Astuce :</strong> Utilisez Ctrl+H (Windows) ou Cmd+H (Mac) pour remplacer rapidement le texte existant par votre nouveau contenu.
+    </div>
+</div>
+<div class="step-block">
+<div class="step-num">3</div>
+<h2>Ajouter l'article à la page d'accueil</h2>
+<ol>
+<li>Ouvrez le fichier <strong>index.html</strong> avec votre éditeur de texte</li>
+<li>Trouvez la section <span class="highlight">&lt;div class="articles-grid"&gt;</span></li>
+<li>Copiez un bloc <span class="highlight">&lt;article class="article-card"&gt;...&lt;/article&gt;</span> existant</li>
+<li>Collez-le en premier dans la grille (pour qu'il apparaisse en tête)</li>
+<li>Modifiez le titre, l'extrait, la catégorie et le lien vers votre nouveau fichier</li>
+</ol>
+</div>
+<div class="step-block">
+<div class="step-num">4</div>
+<h2>Remettre en ligne sur Netlify</h2>
+<ol>
+<li>Connectez-vous à votre compte Netlify</li>
+<li>Cliquez sur votre site</li>
+<li>Cliquez sur <strong>Deploys</strong></li>
+<li>Faites glisser à nouveau le dossier <strong>blog-atelier-dirigeant</strong> entier dans la zone de dépôt</li>
+<li>Netlify met à jour votre blog en 30 secondes</li>
+<li>Votre nouvel article est en ligne ✅</li>
+</ol>
+</div>
+<!-- PARTIE 3 : RESSOURCES -->
+<h2 style="font-size:1.4rem;color:var(--marine);margin:36px 0 20px;padding-bottom:10px;border-bottom:2px solid var(--gold);">Partie 3 — Ajouter une ressource téléchargeable</h2>
+<div class="step-block">
+<div class="step-num">1</div>
+<h2>Déposer votre fichier PDF ou Excel</h2>
+<ol>
+<li>Copiez votre fichier PDF ou Excel dans le dossier <strong>blog-atelier-dirigeant/ressources/</strong></li>
+<li>Nommez-le clairement, sans espaces ni accents<br/>Exemple : <span class="highlight">checklist-reprise-commerce.pdf</span></li>
+</ol>
+</div>
+<div class="step-block">
+<div class="step-num">2</div>
+<h2>Créer le lien de téléchargement</h2>
+<ol>
+<li>Ouvrez le fichier <strong>ressources.html</strong></li>
+<li>Trouvez la carte de ressource correspondante</li>
+<li>Remplacez <span class="highlight">href="#"</span> par <span class="highlight">href="ressources/checklist-reprise-commerce.pdf"</span></li>
+<li>Supprimez l'attribut <span class="highlight">onclick="alert(...)"</span></li>
+<li>Ajoutez <span class="highlight">download</span> pour forcer le téléchargement</li>
+<li>Résultat : <span class="highlight">&lt;a href="ressources/checklist-reprise-commerce.pdf" download class="resource-download"&gt;</span></li>
+</ol>
+</div>
+<div class="step-block">
+<div class="step-num">3</div>
+<h2>Remettre en ligne</h2>
+<p style="font-size:0.9rem;color:var(--text-light);">Faites glisser à nouveau le dossier complet sur Netlify. Votre ressource est téléchargeable en ligne.</p>
+</div>
+<!-- PARTIE 4 : NEWSLETTER -->
+<h2 style="font-size:1.4rem;color:var(--marine);margin:36px 0 20px;padding-bottom:10px;border-bottom:2px solid var(--gold);">Partie 4 — Activer la newsletter Brevo</h2>
+<div class="step-block">
+<div class="step-num">1</div>
+<h2>Connecter Brevo au formulaire d'inscription</h2>
+<ol>
+<li>Créez votre compte gratuit sur <strong>www.brevo.com</strong></li>
+<li>Créez une liste "La Minute du Dirigeant"</li>
+<li>Créez un formulaire d'inscription dans Brevo</li>
+<li>Copiez l'URL d'action du formulaire Brevo (disponible dans les paramètres du formulaire)</li>
+<li>Dans chaque fichier HTML, trouvez les balises <span class="highlight">&lt;form class="newsletter-form" onsubmit="return false;"&gt;</span></li>
+<li>Remplacez <span class="highlight">onsubmit="return false;"</span> par <span class="highlight">action="VOTRE_URL_BREVO" method="POST"</span></li>
+<li>Remettre en ligne sur Netlify</li>
+</ol>
+</div>
+<!-- RÉSUMÉ -->
+<div style="background:var(--marine);border-radius:12px;padding:32px;margin-top:36px;text-align:center;">
+<h2 style="color:#fff;margin-bottom:12px;">📋 Résumé de votre routine</h2>
+<table style="width:100%;border-collapse:collapse;margin-top:16px;">
+<thead><tr><th style="color:var(--gold);padding:8px;text-align:left;font-size:0.8rem;border-bottom:1px solid rgba(255,255,255,0.15);">Action</th><th style="color:var(--gold);padding:8px;text-align:left;font-size:0.8rem;border-bottom:1px solid rgba(255,255,255,0.15);">Temps</th><th style="color:var(--gold);padding:8px;text-align:left;font-size:0.8rem;border-bottom:1px solid rgba(255,255,255,0.15);">Fréquence</th></tr></thead>
+<tbody>
+<tr><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">Écrire un article</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">1 à 2h</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">1 fois/semaine</td></tr>
+<tr><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">Dupliquer + modifier le HTML</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">15 min</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">1 fois/semaine</td></tr>
+<tr><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">Déployer sur Netlify</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">2 min</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">À chaque mise à jour</td></tr>
+<tr><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">Partager sur LinkedIn</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">10 min</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08);">À chaque article</td></tr>
+<tr><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;">Envoyer La Minute du Dirigeant</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;">30 min</td><td style="color:rgba(255,255,255,0.8);padding:8px;font-size:0.85rem;">1 fois/mois</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<footer class="site-footer" style="margin-top:48px;">
+<div class="container">
+<div class="footer-bottom">
+<p>© 2026 L'Atelier du Dirigeant — Arnaud Lenne · <a href="index.html" style="color:var(--gold);">Voir le blog</a></p>
+</div>
+</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
