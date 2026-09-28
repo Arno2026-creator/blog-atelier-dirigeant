@@ -308,6 +308,18 @@
 </div>
 </footer>
 <button aria-label="Retour en haut" id="back-top" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--marine);color:#fff;border:none;border-radius:50%;font-size:1.2rem;cursor:pointer;opacity:0;transition:opacity 0.3s;box-shadow:0 2px 12px rgba(10,31,68,0.25);">↑</button>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 <script src="js/main.js"></script>
 </body>
 </html>
