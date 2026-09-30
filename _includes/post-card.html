@@ -1,0 +1,39 @@
+{% assign post = include.post %}
+<article class="post-card">
+<a aria-hidden="true" class="post-card__image-link" href="{{ post.url | relative_url }}" tabindex="-1">
+<div class="post-card__image-wrapper">
+      {% if post.image %}
+        <img alt="{{ post.title }}" class="post-card__image" height="340" loading="lazy" src="{{ post.image | relative_url }}" width="600"/>
+      {% else %}
+        <div class="post-card__image-placeholder">
+          {% assign cat = site.categories_list | where: "slug", post.categories | first %}
+          {% if cat %}<span>{{ cat.icon }}</span>{% else %}<span>📄</span>{% endif %}
+        </div>
+      {% endif %}
+      {% if post.categories %}
+        <span class="post-card__category-badge">
+          {% assign cat = site.categories_list | where: "slug", post.categories | first %}
+          {% if cat %}{{ cat.icon }} {{ cat.name }}{% else %}{{ post.categories }}{% endif %}
+        </span>
+      {% endif %}
+    </div>
+</a>
+<div class="post-card__body">
+<div class="post-card__meta">
+<time class="post-card__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+      {% if post.read_time %}<span class="post-card__read-time">· {{ post.read_time }} min</span>{% endif %}
+    </div>
+<h2 class="post-card__title">
+<a class="post-card__title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+</h2>
+    {% if post.excerpt %}
+      <p class="post-card__excerpt">{{ post.excerpt | truncate: 120 }}</p>
+    {% elsif post.description %}
+      <p class="post-card__excerpt">{{ post.description | truncate: 120 }}</p>
+    {% endif %}
+    <a class="post-card__cta" href="{{ post.url | relative_url }}">
+      Lire l'article
+      <svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+</div>
+</article>

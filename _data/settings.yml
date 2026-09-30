@@ -1,0 +1,18 @@
+title: "L'Atelier du Dirigeant"
+tagline: "Conseils pratiques pour les dirigeants de commerce et restauration"
+description: "Des conseils concrets pour créer, ouvrir, piloter, recruter, développer et rentabiliser votre commerce ou restaurant."
+email: "arnolenne72@gmail.com"
+
+social:
+  linkedin: ""
+  twitter: ""
+  facebook: ""
+  instagram: ""
+
+analytics:
+  google_analytics: ""
+  plausible: ""
+
+newsletter:
+  active: true
+  provider: "netlify-forms"

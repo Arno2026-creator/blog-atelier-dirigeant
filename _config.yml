@@ -1,0 +1,91 @@
+# ============================================================
+# L'Atelier du Dirigeant — Configuration Jekyll
+# ============================================================
+
+title: "L'Atelier du Dirigeant"
+description: "Conseils pratiques pour les dirigeants de commerce et restauration"
+baseurl: ""
+url: "https://blog-atelier-dirigeant.netlify.app"
+
+author:
+  name: "Arnaud Lenne"
+  email: "arnolenne72@gmail.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Pagination
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# Pages
+include:
+  - _pages
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Arnaud Lenne"
+      image: "/assets/images/default-cover.jpg"
+  - scope:
+      path: "_pages"
+    values:
+      layout: "page"
+
+# Categories
+categories_list:
+  - name: "Créer & Reprendre"
+    slug: "creer-reprendre"
+    icon: "🏗️"
+    description: "Tout savoir pour créer ou reprendre un commerce ou restaurant"
+  - name: "Ouvrir"
+    slug: "ouvrir"
+    icon: "🔑"
+    description: "Les étapes clés pour ouvrir votre établissement"
+  - name: "Piloter"
+    slug: "piloter"
+    icon: "🧭"
+    description: "Gérer et piloter votre activité au quotidien"
+  - name: "Recruter"
+    slug: "recruter"
+    icon: "👥"
+    description: "Attirer, recruter et fidéliser vos équipes"
+  - name: "Développer"
+    slug: "developper"
+    icon: "📈"
+    description: "Stratégies pour développer votre activité"
+  - name: "Rentabiliser"
+    slug: "rentabiliser"
+    icon: "💰"
+    description: "Optimiser vos marges et votre rentabilité"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - README.md
+  - todo.md
+
+# Sass
+sass:
+  style: compressed
+  sass_dir: _sass
+
+lang: fr

@@ -1,55 +1,184 @@
 backend:
   name: git-gateway
   branch: main
+  commit_messages:
+    create: 'feat(content): Nouvel article "{{slug}}"'
+    update: 'fix(content): Mise à jour "{{slug}}"'
+    delete: 'chore(content): Suppression "{{slug}}"'
+    uploadMedia: 'chore(media): Upload {{path}}'
+    deleteMedia: 'chore(media): Suppression {{path}}'
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+# Netlify Identity
+identity_url: "/.netlify/identity"
+gateway_url: "/.netlify/git"
+squash_merges: true
+
+# Interface
 locale: fr
+show_preview_links: true
 
+# Médias
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Collections
 collections:
-  - name: "articles"
-    label: "Articles du blog"
+  # ── Articles de blog ──────────────────────────────────────
+  - name: "posts"
+    label: "📝 Articles"
     label_singular: "Article"
-    folder: "articles"
+    folder: "_posts"
     create: true
-    slug: "{{slug}}"
-    extension: "html"
-    format: "frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "{{categories}}/{{year}}/{{month}}/{{day}}/{{slug}}"
+    editor:
+      preview: true
+    summary: "{{title}} — {{date | date('DD/MM/YYYY')}} [{{categories}}]"
+    sortable_fields: ["date", "title", "categories"]
     fields:
       - label: "Titre"
         name: "title"
         widget: "string"
+        hint: "Titre accrocheur de l'article (60-70 caractères recommandés)"
+
       - label: "Date de publication"
         name: "date"
         widget: "datetime"
-        format: "MMMM YYYY"
-        date_format: "MMMM YYYY"
-        time_format: false
+        format: "YYYY-MM-DD HH:mm:ss"
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        default: ""
+
+      - label: "Catégorie"
+        name: "categories"
+        widget: "select"
+        options:
+          - { label: "🏗️ Créer & Reprendre", value: "creer-reprendre" }
+          - { label: "🔑 Ouvrir", value: "ouvrir" }
+          - { label: "🧭 Piloter", value: "piloter" }
+          - { label: "👥 Recruter", value: "recruter" }
+          - { label: "📈 Développer", value: "developper" }
+          - { label: "💰 Rentabiliser", value: "rentabiliser" }
+
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        hint: "Mots-clés séparés par virgule (ex: gestion, commerce, conseil)"
+
+      - label: "Image de couverture"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Image principale de l'article (1200×630px recommandé)"
+        media_library:
+          config:
+            multiple: false
+
+      - label: "Description SEO"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Résumé pour les moteurs de recherche (150-160 caractères)"
+        pattern: [".{0,160}", "Maximum 160 caractères"]
+
+      - label: "Extrait"
+        name: "excerpt"
+        widget: "text"
+        required: false
+        hint: "Court résumé affiché sur la page blog (2-3 phrases)"
+
       - label: "Temps de lecture (minutes)"
         name: "read_time"
         widget: "number"
         default: 5
-      - label: "Catégorie"
-        name: "category"
-        widget: "select"
-        options:
-          - { label: "Créer & Reprendre", value: "Créer & Reprendre" }
-          - { label: "Ouvrir", value: "Ouvrir" }
-          - { label: "Piloter", value: "Piloter" }
-          - { label: "Recruter", value: "Recruter" }
-          - { label: "Développer", value: "Développer" }
-          - { label: "Rentabiliser", value: "Rentabiliser" }
-      - label: "Description (extrait)"
-        name: "description"
-        widget: "text"
-      - label: "Image à la une"
-        name: "featured_image"
-        widget: "image"
-        required: false
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-        required: false
-      - label: "Contenu de l'article"
+        value_type: "int"
+        min: 1
+        max: 60
+
+      - label: "Article mis en avant"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Afficher cet article en tête de blog"
+
+      - label: "Brouillon"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        hint: "Ne pas publier cet article"
+
+      - label: "Contenu"
         name: "body"
         widget: "markdown"
+        hint: "Rédigez votre article en Markdown"
+        modes: ["raw", "rich_text"]
+        buttons:
+          - bold
+          - italic
+          - code
+          - link
+          - heading-one
+          - heading-two
+          - heading-three
+          - quote
+          - bulleted-list
+          - numbered-list
+
+  # ── Pages statiques ───────────────────────────────────────
+  - name: "pages"
+    label: "📄 Pages"
+    label_singular: "Page"
+    folder: "_pages"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - label: "Titre"
+        name: "title"
+        widget: "string"
+
+      - label: "Permalink"
+        name: "permalink"
+        widget: "string"
+
+      - label: "Description SEO"
+        name: "description"
+        widget: "text"
+        required: false
+
+      - label: "Contenu"
+        name: "body"
+        widget: "markdown"
+
+  # ── Paramètres du site ────────────────────────────────────
+  - name: "settings"
+    label: "⚙️ Paramètres"
+    files:
+      - label: "Informations générales"
+        name: "general"
+        file: "_data/settings.yml"
+        fields:
+          - label: "Nom du blog"
+            name: "title"
+            widget: "string"
+
+          - label: "Slogan"
+            name: "tagline"
+            widget: "string"
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+
+          - label: "Email de contact"
+            name: "email"
+            widget: "string"
+
+          - label: "Réseaux sociaux"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "Twitter/X", name: "twitter", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }

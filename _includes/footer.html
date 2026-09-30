@@ -1,0 +1,68 @@
+<footer class="site-footer" role="contentinfo">
+<div class="site-footer__main container">
+<div class="site-footer__grid">
+<div class="site-footer__col site-footer__col--about">
+<a class="site-footer__logo" href="{{ '/' | relative_url }}">
+<span class="site-logo__icon">⚙️</span>
+<span class="site-logo__text">
+<span class="site-logo__name">L'Atelier</span>
+<span class="site-logo__sub">du Dirigeant</span>
+</span>
+</a>
+<p class="site-footer__tagline">Conseils pratiques pour les dirigeants de commerce et restauration.</p>
+<div class="site-footer__social">
+<a aria-label="LinkedIn" class="social-link" href="#" rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+<a aria-label="Facebook" class="social-link" href="#" rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+</a>
+</div>
+</div>
+<div class="site-footer__col">
+<h3 class="site-footer__heading">Catégories</h3>
+<ul class="site-footer__links" role="list">
+          {% for cat in site.categories_list %}
+            <li><a class="site-footer__link" href="{{ '/blog/' | relative_url }}#{{ cat.slug }}">{{ cat.icon }} {{ cat.name }}</a></li>
+          {% endfor %}
+        </ul>
+</div>
+<div class="site-footer__col">
+<h3 class="site-footer__heading">Navigation</h3>
+<ul class="site-footer__links" role="list">
+<li><a class="site-footer__link" href="{{ '/' | relative_url }}">Accueil</a></li>
+<li><a class="site-footer__link" href="{{ '/blog/' | relative_url }}">Tous les articles</a></li>
+<li><a class="site-footer__link" href="{{ '/a-propos/' | relative_url }}">À propos</a></li>
+<li><a class="site-footer__link" href="{{ '/contact/' | relative_url }}">Contact</a></li>
+<li><a class="site-footer__link" href="{{ '/feed.xml' | relative_url }}">Flux RSS</a></li>
+</ul>
+</div>
+<div class="site-footer__col site-footer__col--newsletter">
+<h3 class="site-footer__heading">Newsletter</h3>
+<p class="site-footer__newsletter-text">Recevez nos conseils directement dans votre boîte mail.</p>
+<form action="#" class="newsletter-form newsletter-form--footer" data-netlify="true" method="post" name="newsletter-footer">
+<input name="form-name" type="hidden" value="newsletter-footer"/>
+<div class="newsletter-form__group">
+<input aria-label="Votre adresse email" class="newsletter-form__input" name="email" placeholder="votre@email.fr" required="" type="email"/>
+<button aria-label="S'inscrire" class="btn btn--gold newsletter-form__btn" type="submit">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</button>
+</div>
+<p class="newsletter-form__privacy">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="12"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Pas de spam. Désabonnement en 1 clic.
+          </p>
+</form>
+</div>
+</div>
+</div>
+<div class="site-footer__bottom">
+<div class="container site-footer__bottom-inner">
+<p class="site-footer__copyright">© {{ 'now' | date: "%Y" }} L'Atelier du Dirigeant. Tous droits réservés.</p>
+<nav aria-label="Liens légaux" class="site-footer__legal">
+<a class="site-footer__legal-link" href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a>
+<a class="site-footer__legal-link" href="{{ '/politique-confidentialite/' | relative_url }}">Confidentialité</a>
+</nav>
+</div>
+</div>
+</footer>
