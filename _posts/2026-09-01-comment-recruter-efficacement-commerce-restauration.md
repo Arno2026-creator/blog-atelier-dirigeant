@@ -3,7 +3,7 @@ layout: post
 title: "Comment recruter efficacement dans le commerce et la restauration"
 date: 2026-09-01 09:00:00 +0200
 categories: recruter
-tags: [recrutement, turnover, entretien, intégration, fidélisation, commerce, restauration]
+tags: []
 image: /assets/images/uploads/recruter-efficacement.jpg
 description: "Le turnover est le fléau du commerce et de la restauration. Voici une méthode en 5 étapes pour recruter mieux, plus vite et plus durablement."
 excerpt: "Le turnover est le fléau du commerce et de la restauration. Un recrutement raté coûte 3 à 6 mois de salaire. Voici une méthode pour recruter mieux, plus vite et plus durablement."
