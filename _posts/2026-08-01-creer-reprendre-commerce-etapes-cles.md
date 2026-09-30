@@ -3,7 +3,7 @@ layout: post
 title: "Créer ou reprendre un commerce : les étapes clés pour réussir"
 date: 2026-08-01 09:00:00 +0200
 categories: creer-reprendre
-tags: [création, reprise, business plan, statut juridique, financement]
+tags: []
 image: /assets/images/uploads/creer-reprendre-commerce.jpg
 description: "Créer ou reprendre un commerce demande méthode et préparation. Les étapes incontournables pour passer de l'idée à l'ouverture en limitant les risques."
 excerpt: "De l'idée à l'ouverture, créer ou reprendre un commerce demande méthode et préparation. Les étapes incontournables pour maximiser vos chances de succès."
