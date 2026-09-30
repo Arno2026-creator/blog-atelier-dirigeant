@@ -3,7 +3,7 @@ layout: post
 title: "Ouvrir un restaurant : la checklist complète avant le jour J"
 date: 2026-08-05 09:00:00 +0200
 categories: ouvrir
-tags: [restaurant, ouverture, checklist, réglementation, hygiène, HACCP]
+tags: []
 image: /assets/images/uploads/ouvrir-restaurant-checklist.jpg
 description: "Ouvrir un restaurant implique des dizaines de démarches. Cette checklist complète vous guide étape par étape pour ne rien oublier avant le jour J."
 excerpt: "Permis, normes d'hygiène, équipements, recrutement, communication… Ouvrir un restaurant implique des dizaines de démarches. Ne rien oublier avec cette checklist."
