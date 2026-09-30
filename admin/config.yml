@@ -4,37 +4,52 @@ backend:
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
-
-locale: 'fr'
+locale: fr
 
 collections:
   - name: "articles"
-    label: "Articles"
-    folder: "articles-content"
+    label: "Articles du blog"
+    label_singular: "Article"
+    folder: "articles"
     create: true
     slug: "{{slug}}"
-    editor:
-      preview: false
+    extension: "html"
+    format: "frontmatter"
     fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Catégorie", name: "category", widget: "select", options: ["Créer & Reprendre", "Ouvrir", "Piloter", "Recruter", "Développer", "Rentabiliser"]}
-      - {label: "Date de publication", name: "date", widget: "datetime", format: "DD MMMM YYYY", date_format: "DD/MM/YYYY", time_format: false}
-      - {label: "Temps de lecture (minutes)", name: "read_time", widget: "number", default: 5}
-      - {label: "Extrait (2-3 lignes pour la page d'accueil)", name: "excerpt", widget: "text"}
-      - {label: "Contenu de l'article", name: "body", widget: "markdown"}
-      - {label: "Tags (séparés par des virgules)", name: "tags", widget: "list", default: []}
-
-  - name: "ressources"
-    label: "Ressources téléchargeables"
-    folder: "ressources-content"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - {label: "Titre de la ressource", name: "title", widget: "string"}
-      - {label: "Type", name: "type", widget: "select", options: ["PDF", "Excel", "Check-list", "Guide"]}
-      - {label: "Catégorie", name: "category", widget: "select", options: ["Créer & Reprendre", "Ouvrir", "Piloter", "Recruter", "Développer", "Rentabiliser"]}
-      - {label: "Description courte", name: "description", widget: "text"}
-      - {label: "Fichier à télécharger", name: "file", widget: "file"}
-      - {label: "Gratuit", name: "free", widget: "boolean", default: true}
+      - label: "Titre"
+        name: "title"
+        widget: "string"
+      - label: "Date de publication"
+        name: "date"
+        widget: "datetime"
+        format: "MMMM YYYY"
+        date_format: "MMMM YYYY"
+        time_format: false
+      - label: "Temps de lecture (minutes)"
+        name: "read_time"
+        widget: "number"
+        default: 5
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Créer & Reprendre", value: "Créer & Reprendre" }
+          - { label: "Ouvrir", value: "Ouvrir" }
+          - { label: "Piloter", value: "Piloter" }
+          - { label: "Recruter", value: "Recruter" }
+          - { label: "Développer", value: "Développer" }
+          - { label: "Rentabiliser", value: "Rentabiliser" }
+      - label: "Description (extrait)"
+        name: "description"
+        widget: "text"
+      - label: "Image à la une"
+        name: "featured_image"
+        widget: "image"
+        required: false
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+      - label: "Contenu de l'article"
+        name: "body"
+        widget: "markdown"
