@@ -1,59 +1,11 @@
 [build]
-  command = "jekyll build"
+  command = "bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]
   RUBY_VERSION = "3.2.0"
   JEKYLL_ENV = "production"
+  GATSBY_TELEMETRY_DISABLED = "1"
 
-# Redirects
-[[redirects]]
-  from = "/admin"
-  to = "/admin/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
-  status = 200
-
-# Headers de sécurité
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://identity.netlify.com https://api.netlify.com;"
-
-[[headers]]
-  for = "/admin/*"
-  [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
-
-# Cache statique
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Netlify Identity
 [context.production]
   environment = { JEKYLL_ENV = "production" }
-
-[context.deploy-preview]
-  command = "jekyll build --drafts"
-
-[context.branch-deploy]
-  command = "jekyll build --drafts"
