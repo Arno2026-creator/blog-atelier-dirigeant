@@ -40,7 +40,7 @@ layout: default
 <div class="post-body__layout">
 <div class="post-content" itemprop="articleBody">
         {{ content }}
-        {% if page.tags and page.tags.size &gt; 0 %}
+       {% if page.tags != empty %}
           <div class="post-tags">
 <span class="post-tags__label">Tags :</span>
             {% for tag in page.tags %}<span class="post-tag">{{ tag }}</span>{% endfor %}
