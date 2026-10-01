@@ -1,7 +1,7 @@
 ---
 title: "Due diligence opérationnelle : les 11 domaines que le notaire et
   l'avocat ne couvrent pas"
-date: 2026-10-01 14:23:00
+date: 2026-09-01 14:23:00
 categories: creer-reprendre
 image: ""
 description: "Reprise de commerce ou de restaurant : les 11 domaines
