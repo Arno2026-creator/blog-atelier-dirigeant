@@ -1,19 +1,14 @@
 ---
-categories: creer-reprendre
-tags: []
-image: /assets/images/uploads/gemini_generated_image_7p2fi7p2fi7p2fi7.jpg
-description: Créer ou reprendre un commerce demande méthode et préparation. Les
-  étapes incontournables pour passer de l'idée à l'ouverture en limitant les
-  risques.
-excerpt: De l'idée à l'ouverture, créer ou reprendre un commerce demande méthode
-  et préparation. Les étapes incontournables pour maximiser vos chances de
-  succès.
-draft: true
 layout: post
-author: Arnaud Lenne
 title: "Créer ou reprendre un commerce : les étapes clés pour réussir"
-date: 2026-09-30 13:54:00
+date: 2026-08-01 09:00:00 +0200
+categories: creer-reprendre
+tags: [création, reprise, business plan, statut juridique, financement]
+image: /assets/images/uploads/creer-reprendre-commerce.jpg
+description: "Créer ou reprendre un commerce demande méthode et préparation. Les étapes incontournables pour passer de l'idée à l'ouverture en limitant les risques."
+excerpt: "De l'idée à l'ouverture, créer ou reprendre un commerce demande méthode et préparation. Les étapes incontournables pour maximiser vos chances de succès."
 read_time: 7
+author: "Arnaud Lenne"
 featured: false
 ---
 

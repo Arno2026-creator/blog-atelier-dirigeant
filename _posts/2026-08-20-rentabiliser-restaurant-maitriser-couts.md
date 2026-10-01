@@ -3,7 +3,7 @@ layout: post
 title: "Rentabiliser son restaurant : maîtriser ses coûts sans sacrifier la qualité"
 date: 2026-08-20 09:00:00 +0200
 categories: rentabiliser
-tags: []
+tags: [rentabilité, coûts, food cost, masse salariale, restaurant, marges]
 image: /assets/images/uploads/rentabiliser-restaurant-couts.jpg
 description: "La rentabilité d'un restaurant repose sur la maîtrise de deux postes clés : le food cost et la masse salariale. Méthodes et outils pour optimiser sans dégrader la qualité."
 excerpt: "Un restaurant peut faire salle comble et perdre de l'argent. La rentabilité repose sur deux postes clés : le food cost et la masse salariale."

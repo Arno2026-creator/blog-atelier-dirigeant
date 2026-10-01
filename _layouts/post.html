@@ -1,14 +1,13 @@
 ---
 layout: default
 ---
-
-<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
-  <header class="post-hero {% if page.image %}post-hero--with-image{% endif %}">
+<article class="post" itemscope="" itemtype="https://schema.org/BlogPosting">
+<header class="post-hero {% if page.image %}post-hero--with-image{% endif %}">
     {% if page.image %}
       <div class="post-hero__image">
-        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" itemprop="image" />
-        <div class="post-hero__overlay"></div>
-      </div>
+<img alt="{{ page.title }}" itemprop="image" src="{{ page.image | relative_url }}"/>
+<div class="post-hero__overlay"></div>
+</div>
     {% endif %}
     <div class="post-hero__content container">
       {% if page.categories %}
@@ -20,62 +19,69 @@ layout: default
       <h1 class="post-hero__title" itemprop="headline">{{ page.title }}</h1>
       {% if page.excerpt %}<p class="post-hero__excerpt">{{ page.excerpt }}</p>{% endif %}
       <div class="post-meta">
-        <span class="post-meta__date" itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
+<span class="post-meta__date" content="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><rect height="18" rx="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
           {{ page.date | date: "%d %B %Y" }}
         </span>
         {% if page.read_time %}
-          <span class="post-meta__read-time">{{ page.read_time }} min de lecture</span>
+          <span class="post-meta__read-time">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            {{ page.read_time }} min de lecture
+          </span>
         {% endif %}
         <span class="post-meta__author" itemprop="author">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           {{ page.author | default: site.author.name }}
         </span>
-      </div>
-    </div>
-  </header>
-
-  <div class="post-body container">
-    <div class="post-body__layout">
-      <div class="post-content" itemprop="articleBody">
+</div>
+</div>
+</header>
+<div class="post-body container">
+<div class="post-body__layout">
+<div class="post-content" itemprop="articleBody">
         {{ content }}
-        <div class="post-share">
-          <span class="post-share__label">Partager :</span>
-          <div class="post-share__buttons">
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer" class="share-btn share-btn--linkedin">LinkedIn</a>
-            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer" class="share-btn share-btn--twitter">Twitter</a>
+        {% if page.tags and page.tags.size &gt; 0 %}
+          <div class="post-tags">
+<span class="post-tags__label">Tags :</span>
+            {% for tag in page.tags %}<span class="post-tag">{{ tag }}</span>{% endfor %}
           </div>
-        </div>
-      </div>
-      <aside class="post-sidebar">{% include sidebar.html %}</aside>
-    </div>
-  </div>
-
-  <nav class="post-navigation container">
-    <div class="post-navigation__inner">
+        {% endif %}
+        <div class="post-share">
+<span class="post-share__label">Partager :</span>
+<div class="post-share__buttons">
+<a class="share-btn share-btn--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="share-btn share-btn--twitter" href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&amp;url={{ page.url | absolute_url | url_encode }}" rel="noopener noreferrer" target="_blank">Twitter</a>
+</div>
+</div>
+</div>
+<aside class="post-sidebar">{% include sidebar.html %}</aside>
+</div>
+</div>
+<nav class="post-navigation container">
+<div class="post-navigation__inner">
       {% if page.previous.url %}
-        <a href="{{ page.previous.url | relative_url }}" class="post-nav-link post-nav-link--prev">
-          <span class="post-nav-link__label">← Article précédent</span>
-          <span class="post-nav-link__title">{{ page.previous.title }}</span>
-        </a>
+        <a class="post-nav-link post-nav-link--prev" href="{{ page.previous.url | relative_url }}">
+<span class="post-nav-link__label">← Article précédent</span>
+<span class="post-nav-link__title">{{ page.previous.title }}</span>
+</a>
       {% else %}<div></div>{% endif %}
       {% if page.next.url %}
-        <a href="{{ page.next.url | relative_url }}" class="post-nav-link post-nav-link--next">
-          <span class="post-nav-link__label">Article suivant →</span>
-          <span class="post-nav-link__title">{{ page.next.title }}</span>
-        </a>
+        <a class="post-nav-link post-nav-link--next" href="{{ page.next.url | relative_url }}">
+<span class="post-nav-link__label">Article suivant →</span>
+<span class="post-nav-link__title">{{ page.next.title }}</span>
+</a>
       {% endif %}
     </div>
-  </nav>
-
-  {% assign related = site.posts | where: "categories", page.categories | limit: 3 %}
-  {% if related.size > 0 %}
+</nav>
+  {% assign related_posts = site.posts | where: "categories", page.categories | where_exp: "p", "p.url != page.url" | limit: 3 %}
+  {% if related_posts.size &gt; 0 %}
     <section class="related-posts">
-      <div class="container">
-        <h2 class="related-posts__title">Articles dans la même catégorie</h2>
-        <div class="posts-grid posts-grid--3">
-          {% for post in related %}{% include post-card.html post=post %}{% endfor %}
+<div class="container">
+<h2 class="related-posts__title">Articles dans la même catégorie</h2>
+<div class="posts-grid posts-grid--3">
+          {% for post in related_posts %}{% include post-card.html post=post %}{% endfor %}
         </div>
-      </div>
-    </section>
+</div>
+</section>
   {% endif %}
-
 </article>

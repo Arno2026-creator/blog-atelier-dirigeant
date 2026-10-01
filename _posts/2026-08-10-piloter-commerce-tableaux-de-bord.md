@@ -3,7 +3,7 @@ layout: post
 title: "Piloter son commerce avec les bons tableaux de bord"
 date: 2026-08-10 09:00:00 +0200
 categories: piloter
-tags: []
+tags: [tableau de bord, gestion, indicateurs, KPI, trésorerie, commerce]
 image: /assets/images/uploads/piloter-tableaux-de-bord.jpg
 description: "Quels indicateurs suivre pour piloter efficacement son commerce ? Les KPI essentiels et comment construire un tableau de bord simple et actionnable."
 excerpt: "Sans indicateurs clairs, piloter un commerce revient à conduire les yeux fermés. Voici les KPI essentiels et comment construire un tableau de bord vraiment utile."
