@@ -1,59 +1,44 @@
 <aside class="sidebar">
-<div class="sidebar-widget sidebar-widget--categories">
-<h3 class="sidebar-widget__title">Catégories</h3>
-<ul class="sidebar-categories" role="list">
+  <div class="sidebar-widget sidebar-widget--categories">
+    <h3 class="sidebar-widget__title">Catégories</h3>
+    <ul class="sidebar-categories" role="list">
       {% for cat in site.categories_list %}
         {% assign cat_posts = site.posts | where: "categories", cat.slug %}
-        <li class="sidebar-category {% if page.categories == cat.slug %}sidebar-category--active{% endif %}">
-<a class="sidebar-category__link" href="{{ '/blog/' | relative_url }}#{{ cat.slug }}">
-<span class="sidebar-category__icon">{{ cat.icon }}</span>
-<span class="sidebar-category__name">{{ cat.name }}</span>
-<span class="sidebar-category__count">{{ cat_posts.size }}</span>
-</a>
-</li>
+        <li class="sidebar-category">
+          <a href="{{ '/blog/' | relative_url }}#{{ cat.slug }}" class="sidebar-category__link">
+            <span class="sidebar-category__icon">{{ cat.icon }}</span>
+            <span class="sidebar-category__name">{{ cat.name }}</span>
+            <span class="sidebar-category__count">{{ cat_posts.size }}</span>
+          </a>
+        </li>
       {% endfor %}
     </ul>
-</div>
-<div class="sidebar-widget sidebar-widget--recent">
-<h3 class="sidebar-widget__title">Articles récents</h3>
-<ul class="sidebar-recent" role="list">
-      {% assign recent_posts = site.posts | limit: 5 %}
-      {% for post in recent_posts %}
-        {% unless post.url == page.url %}
-          <li class="sidebar-recent__item">
-<a class="sidebar-recent__link" href="{{ post.url | relative_url }}">
-              {% if post.image %}
-                <img alt="{{ post.title }}" class="sidebar-recent__thumb" height="60" loading="lazy" src="{{ post.image | relative_url }}" width="60"/>
-              {% else %}
-                <div class="sidebar-recent__thumb-placeholder">
-                  {% assign cat = site.categories_list | where: "slug", post.categories | first %}
-                  {% if cat %}{{ cat.icon }}{% else %}📄{% endif %}
-                </div>
-              {% endif %}
-              <div class="sidebar-recent__info">
-<span class="sidebar-recent__title">{{ post.title | truncate: 50 }}</span>
-<time class="sidebar-recent__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
-</div>
-</a>
-</li>
-        {% endunless %}
+  </div>
+  <div class="sidebar-widget sidebar-widget--recent">
+    <h3 class="sidebar-widget__title">Articles récents</h3>
+    <ul class="sidebar-recent" role="list">
+      {% for post in site.posts limit:5 %}
+        <li class="sidebar-recent__item">
+          <a href="{{ post.url | relative_url }}" class="sidebar-recent__link">
+            <div class="sidebar-recent__info">
+              <span class="sidebar-recent__title">{{ post.title | truncate: 50 }}</span>
+              <time class="sidebar-recent__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+            </div>
+          </a>
+        </li>
       {% endfor %}
     </ul>
-</div>
-<div class="sidebar-widget sidebar-widget--newsletter">
-<div class="sidebar-newsletter">
-<div class="sidebar-newsletter__icon">✉️</div>
-<h3 class="sidebar-newsletter__title">Newsletter</h3>
-<p class="sidebar-newsletter__text">Recevez nos meilleurs conseils chaque semaine.</p>
-<form action="#" class="newsletter-form" data-netlify="true" method="post" name="newsletter-sidebar">
-<input name="form-name" type="hidden" value="newsletter-sidebar"/>
-<input aria-label="Votre adresse email" class="newsletter-form__input" name="email" placeholder="votre@email.fr" required="" type="email"/>
-<button class="btn btn--gold btn--full" type="submit">Je m'inscris gratuitement</button>
-<p class="newsletter-form__privacy">
-<svg fill="none" height="11" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="11"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          Pas de spam. Désabonnement en 1 clic.
-        </p>
-</form>
-</div>
-</div>
+  </div>
+  <div class="sidebar-widget sidebar-widget--newsletter">
+    <div class="sidebar-newsletter">
+      <div class="sidebar-newsletter__icon">✉️</div>
+      <h3 class="sidebar-newsletter__title">Newsletter</h3>
+      <p class="sidebar-newsletter__text">Recevez nos meilleurs conseils chaque semaine.</p>
+      <form class="newsletter-form" action="#" method="post" data-netlify="true" name="newsletter-sidebar">
+        <input type="hidden" name="form-name" value="newsletter-sidebar" />
+        <input type="email" name="email" placeholder="votre@email.fr" required class="newsletter-form__input" aria-label="Votre adresse email" />
+        <button type="submit" class="btn btn--gold btn--full">Je m'inscris gratuitement</button>
+      </form>
+    </div>
+  </div>
 </aside>
