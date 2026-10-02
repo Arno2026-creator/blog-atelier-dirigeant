@@ -1,10 +1,14 @@
 <aside class="sidebar">
+<!-- Brevo styles -->
+<style>
+    #sib-container-sidebar input::placeholder { font-family: Helvetica, sans-serif; color: #c0ccda; }
+  </style>
 <div class="sidebar-widget sidebar-widget--categories">
 <h3 class="sidebar-widget__title">Catégories</h3>
 <ul class="sidebar-categories" role="list">
       {% for cat in site.categories_list %}
         {% assign cat_posts = site.posts | where: "categories", cat.slug %}
-        <li class="sidebar-category {% if page.categories == cat.slug %}sidebar-category--active{% endif %}">
+        <li class="sidebar-category">
 <a class="sidebar-category__link" href="{{ '/blog/' | relative_url }}#{{ cat.slug }}">
 <span class="sidebar-category__icon">{{ cat.icon }}</span>
 <span class="sidebar-category__name">{{ cat.name }}</span>
@@ -17,43 +21,41 @@
 <div class="sidebar-widget sidebar-widget--recent">
 <h3 class="sidebar-widget__title">Articles récents</h3>
 <ul class="sidebar-recent" role="list">
-      {% assign recent_posts = site.posts | limit: 5 %}
-      {% for post in recent_posts %}
-        {% unless post.url == page.url %}
-          <li class="sidebar-recent__item">
+      {% for post in site.posts limit:5 %}
+        <li class="sidebar-recent__item">
 <a class="sidebar-recent__link" href="{{ post.url | relative_url }}">
-              {% if post.image %}
-                <img alt="{{ post.title }}" class="sidebar-recent__thumb" height="60" loading="lazy" src="{{ post.image | relative_url }}" width="60"/>
-              {% else %}
-                <div class="sidebar-recent__thumb-placeholder">
-                  {% assign cat = site.categories_list | where: "slug", post.categories | first %}
-                  {% if cat %}{{ cat.icon }}{% else %}📄{% endif %}
-                </div>
-              {% endif %}
-              <div class="sidebar-recent__info">
+<div class="sidebar-recent__info">
 <span class="sidebar-recent__title">{{ post.title | truncate: 50 }}</span>
 <time class="sidebar-recent__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
 </div>
 </a>
 </li>
-        {% endunless %}
       {% endfor %}
     </ul>
 </div>
 <div class="sidebar-widget sidebar-widget--newsletter">
 <div class="sidebar-newsletter">
 <div class="sidebar-newsletter__icon">✉️</div>
-<h3 class="sidebar-newsletter__title">Newsletter</h3>
-<p class="sidebar-newsletter__text">Recevez nos meilleurs conseils chaque semaine.</p>
-<form action="#" class="newsletter-form" data-netlify="true" method="post" name="newsletter-sidebar">
-<input name="form-name" type="hidden" value="newsletter-sidebar"/>
-<input aria-label="Votre adresse email" class="newsletter-form__input" name="email" placeholder="votre@email.fr" required="" type="email"/>
-<button class="btn btn--gold btn--full" type="submit">Je m'inscris gratuitement</button>
-<p class="newsletter-form__privacy">
-<svg fill="none" height="11" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="11"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          Pas de spam. Désabonnement en 1 clic.
-        </p>
+<h3 class="sidebar-newsletter__title">La Minute du Dirigeant</h3>
+<p class="sidebar-newsletter__text">Conseils terrain chaque semaine. Gratuit, sans spam.</p>
+<!-- Formulaire Brevo -->
+<div id="sib-form-container-sidebar">
+<div class="sib-form-message-panel" id="error-message-sidebar" style="display:none;font-family:Helvetica,sans-serif;font-size:13px;color:#661d1d;background-color:#ffeded;border-radius:3px;padding:6px;margin-bottom:6px;">
+          Nous n'avons pas pu confirmer votre inscription.
+        </div>
+<div class="sib-form-message-panel" id="success-message-sidebar" style="display:none;font-family:Helvetica,sans-serif;font-size:13px;color:#085229;background-color:#e7faf0;border-radius:3px;padding:6px;margin-bottom:6px;">
+          Votre inscription est confirmée.
+        </div>
+<form action="https://4571b278.sibforms.com/serve/MUIFAEJ0ng8rUTEt0shia6jEo8ra7E6SV5HUZp_EGprVkywpIfZORLd7G3jOcXTQhFhrJGUtxNmGb9DxXt50FMBIHpdSHIA-aAnYcvnlNY4Qc7TFVdkHWN6MhTrLswYESDmQ7qLxoIDCJbwTuw7Q8KtOmFXWfD0mm86aJsl_rb1ZQpl1I0LGupTKJa_JSBalTtaXWmU8KmHGqrpq5g==" data-type="subscription" id="sib-form-sidebar" method="POST" style="display:flex;flex-direction:column;gap:8px;">
+<input class="newsletter-form__input" name="PRENOM" placeholder="Votre prénom" required="" style="padding:8px;border:1px solid rgba(255,255,255,.2);border-radius:3px;background:rgba(255,255,255,.08);color:#fff;font-family:Helvetica,sans-serif;font-size:13px;" type="text"/>
+<input class="newsletter-form__input" name="EMAIL" placeholder="votre@email.fr" required="" style="padding:8px;border:1px solid rgba(255,255,255,.2);border-radius:3px;background:rgba(255,255,255,.08);color:#fff;font-family:Helvetica,sans-serif;font-size:13px;" type="email"/>
+<button class="btn btn--gold btn--full" style="font-family:Helvetica,sans-serif;font-size:13px;font-weight:700;" type="submit">
+            Je m'abonne gratuitement
+          </button>
+<input name="email_address_check" style="display:none;" type="text" value=""/>
+<input name="locale" type="hidden" value="fr"/>
 </form>
+</div>
 </div>
 </div>
 </aside>

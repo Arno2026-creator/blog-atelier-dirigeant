@@ -1,23 +1,20 @@
 <footer class="site-footer" role="contentinfo">
+<!-- Brevo styles -->
+<style>
+    @font-face { font-display: block; font-family: Roboto; src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2") }
+    @font-face { font-display: fallback; font-family: Roboto; font-weight: 600; src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2") }
+    :where(.sib-form-message-panel) { display: none; }
+    #sib-container input::placeholder { font-family: Helvetica, sans-serif; color: #c0ccda; }
+  </style>
+<link href="https://sibforms.com/forms/end-form/build/sib-styles.css" rel="stylesheet"/>
 <div class="site-footer__main container">
 <div class="site-footer__grid">
-<div class="site-footer__col site-footer__col--about">
+<div class="site-footer__col">
 <a class="site-footer__logo" href="{{ '/' | relative_url }}">
 <span class="site-logo__icon">⚙️</span>
-<span class="site-logo__text">
-<span class="site-logo__name">L'Atelier</span>
-<span class="site-logo__sub">du Dirigeant</span>
-</span>
+<span class="site-logo__name">L'Atelier du Dirigeant</span>
 </a>
 <p class="site-footer__tagline">Conseils pratiques pour les dirigeants de commerce et restauration.</p>
-<div class="site-footer__social">
-<a aria-label="LinkedIn" class="social-link" href="#" rel="noopener noreferrer" target="_blank">
-<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-</a>
-<a aria-label="Facebook" class="social-link" href="#" rel="noopener noreferrer" target="_blank">
-<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-</a>
-</div>
 </div>
 <div class="site-footer__col">
 <h3 class="site-footer__heading">Catégories</h3>
@@ -34,35 +31,44 @@
 <li><a class="site-footer__link" href="{{ '/blog/' | relative_url }}">Tous les articles</a></li>
 <li><a class="site-footer__link" href="{{ '/a-propos/' | relative_url }}">À propos</a></li>
 <li><a class="site-footer__link" href="{{ '/contact/' | relative_url }}">Contact</a></li>
-<li><a class="site-footer__link" href="{{ '/feed.xml' | relative_url }}">Flux RSS</a></li>
 </ul>
 </div>
-<div class="site-footer__col site-footer__col--newsletter">
+<div class="site-footer__col" id="newsletter">
 <h3 class="site-footer__heading">Newsletter</h3>
-<p class="site-footer__newsletter-text">Recevez nos conseils directement dans votre boîte mail.</p>
-<form action="#" class="newsletter-form newsletter-form--footer" data-netlify="true" method="post" name="newsletter-footer">
-<input name="form-name" type="hidden" value="newsletter-footer"/>
-<div class="newsletter-form__group">
-<input aria-label="Votre adresse email" class="newsletter-form__input" name="email" placeholder="votre@email.fr" required="" type="email"/>
-<button aria-label="S'inscrire" class="btn btn--gold newsletter-form__btn" type="submit">
-<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-</button>
-</div>
-<p class="newsletter-form__privacy">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="12"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            Pas de spam. Désabonnement en 1 clic.
-          </p>
+<p class="site-footer__newsletter-text">Recevez nos conseils chaque semaine.</p>
+<!-- Formulaire Brevo -->
+<div class="sib-form-container" id="sib-form-container">
+<div class="sib-form-message-panel" id="error-message" style="font-family:Helvetica,sans-serif;font-size:14px;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px;padding:8px;">
+            Nous n'avons pas pu confirmer votre inscription.
+          </div>
+<div class="sib-form-message-panel" id="success-message" style="font-family:Helvetica,sans-serif;font-size:14px;color:#085229;background-color:#e7faf0;border-color:#13ce66;border-radius:3px;padding:8px;">
+            Votre inscription est confirmée.
+          </div>
+<form action="https://4571b278.sibforms.com/serve/MUIFAEJ0ng8rUTEt0shia6jEo8ra7E6SV5HUZp_EGprVkywpIfZORLd7G3jOcXTQhFhrJGUtxNmGb9DxXt50FMBIHpdSHIA-aAnYcvnlNY4Qc7TFVdkHWN6MhTrLswYESDmQ7qLxoIDCJbwTuw7Q8KtOmFXWfD0mm86aJsl_rb1ZQpl1I0LGupTKJa_JSBalTtaXWmU8KmHGqrpq5g==" data-type="subscription" id="sib-form-footer" method="POST" style="display:flex;flex-direction:column;gap:8px;">
+<input class="input newsletter-form__input" name="PRENOM" placeholder="Votre prénom" required="" style="padding:8px;border:1px solid #c0ccda;border-radius:3px;font-family:Helvetica,sans-serif;" type="text"/>
+<input class="input newsletter-form__input" name="EMAIL" placeholder="votre@email.fr" required="" style="padding:8px;border:1px solid #c0ccda;border-radius:3px;font-family:Helvetica,sans-serif;" type="email"/>
+<button class="btn btn--gold" style="font-family:Helvetica,sans-serif;font-size:14px;font-weight:700;color:#FFFFFF;background-color:#1b2a4a;border:none;border-radius:3px;padding:10px;cursor:pointer;" type="submit">
+              Je m'abonne
+            </button>
+<input class="input--hidden" name="email_address_check" style="display:none;" type="text" value=""/>
+<input name="locale" type="hidden" value="fr"/>
 </form>
+</div>
 </div>
 </div>
 </div>
 <div class="site-footer__bottom">
 <div class="container site-footer__bottom-inner">
 <p class="site-footer__copyright">© {{ 'now' | date: "%Y" }} L'Atelier du Dirigeant. Tous droits réservés.</p>
-<nav aria-label="Liens légaux" class="site-footer__legal">
-<a class="site-footer__legal-link" href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a>
-<a class="site-footer__legal-link" href="{{ '/politique-confidentialite/' | relative_url }}">Confidentialité</a>
-</nav>
 </div>
 </div>
+<script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
+    window.LOCALE = 'fr';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides.";
+    window.REQUIRED_ERROR_MESSAGE = "Vous devez renseigner ce champ.";
+    window.GENERIC_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides.";
+    var AUTOHIDE = Boolean(0);
+  </script>
+<script defer="" src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </footer>

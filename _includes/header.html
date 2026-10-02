@@ -13,24 +13,11 @@
 </button>
 <ul class="site-nav__menu" id="nav-menu" role="list">
 <li><a class="site-nav__link {% if page.url == '/' %}site-nav__link--active{% endif %}" href="{{ '/' | relative_url }}">Accueil</a></li>
-<li class="site-nav__item--dropdown">
-<a class="site-nav__link {% if page.url contains '/blog' %}site-nav__link--active{% endif %}" href="{{ '/blog/' | relative_url }}">
-            Articles
-            <svg class="site-nav__chevron" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><polyline points="6 9 12 15 18 9"></polyline></svg>
-</a>
-<ul class="site-nav__dropdown" role="list">
-            {% for cat in site.categories_list %}
-              <li><a class="site-nav__dropdown-link" href="{{ '/blog/' | relative_url }}#{{ cat.slug }}">{{ cat.icon }} {{ cat.name }}</a></li>
-            {% endfor %}
-          </ul>
-</li>
+<li><a class="site-nav__link {% if page.url contains '/blog' %}site-nav__link--active{% endif %}" href="{{ '/blog/' | relative_url }}">Articles</a></li>
 <li><a class="site-nav__link {% if page.url contains '/a-propos' %}site-nav__link--active{% endif %}" href="{{ '/a-propos/' | relative_url }}">À propos</a></li>
 <li><a class="site-nav__link {% if page.url contains '/contact' %}site-nav__link--active{% endif %}" href="{{ '/contact/' | relative_url }}">Contact</a></li>
 </ul>
 </nav>
-<a class="btn btn--gold btn--sm site-header__cta" href="#newsletter">
-<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-      Newsletter
-    </a>
+<a class="btn btn--gold btn--sm site-header__cta" href="#newsletter">Newsletter</a>
 </div>
 </header>
