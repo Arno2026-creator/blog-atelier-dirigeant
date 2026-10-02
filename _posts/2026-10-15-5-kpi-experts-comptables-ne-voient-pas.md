@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Les 5 KPI que les experts-comptables ne voient pas (et qui expliquent tout)"
-date: 2026-10-15 09:00:00 +0200
+date: 2026-10-02 09:00:00 +0200
 categories: piloter
 tags: []
 description: "Votre bilan ne suffit pas. Découvrez les 5 KPI opérationnels que les experts-comptables ne voient pas et qui expliquent vraiment votre rentabilité."
