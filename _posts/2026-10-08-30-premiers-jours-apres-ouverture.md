@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Les 30 premiers jours après l'ouverture : le plan d'action terrain"
-date: 2026-10-08 09:00:00 +0200
+date: 2026-10-02 09:00:00 +0200
 categories: ouvrir
 tags: []
 description: "Les 30 premiers jours après l'ouverture sont décisifs. Découvrez le plan d'action semaine par semaine pour stabiliser, analyser et construire votre rentabilité."
