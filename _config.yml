@@ -6,7 +6,7 @@ title: "L'Atelier du Dirigeant"
 description: "Conseils pratiques pour les dirigeants de commerce et restauration"
 baseurl: ""
 url: "https://blog-atelier-dirigeant.netlify.app"
-
+baseurl: ""
 author:
   name: "Arnaud Lenne"
   email: "arnolenne72@gmail.com"
