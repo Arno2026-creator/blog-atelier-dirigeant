@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Prise de poste d'un directeur de magasin : le plan des 90 premiers jours"
-date: 2026-10-22 09:00:00 +0200
+date: 2026-09-22 09:00:00 +0200
 categories: recruter
 tags: []
 image: /assets/images/uploads/prise-de-poste-directeur-magasin.jpg
