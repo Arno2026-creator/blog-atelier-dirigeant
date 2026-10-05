@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Les 5 KPI que les experts-comptables ne voient pas (et qui expliquent tout)"
-date: 2026-10-15 09:00:00 +0200
+date: 2026-09-15 09:00:00 +0200
 categories: piloter
 tags: []
 image: /assets/images/uploads/les-5-kpi-experts-comptables.jpg
