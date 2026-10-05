@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Passer de 1 à 3 points de vente : les conditions du succès"
-date: 2026-10-29 09:00:00 +0200
+date: 2026-09-29 09:00:00 +0200
 categories: developper
 tags: []
 image: /assets/images/uploads/passer-1-a-3-points-de-vente.jpg
