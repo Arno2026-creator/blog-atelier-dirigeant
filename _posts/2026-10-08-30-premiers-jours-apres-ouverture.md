@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Les 30 premiers jours après l'ouverture : le plan d'action terrain"
-date: 2026-10-08 09:00:00 +0200
+date: 2026-09-08 09:00:00 +0200
 categories: ouvrir
 tags: []
 image: /assets/images/uploads/les-30-premiers-jours.jpg
