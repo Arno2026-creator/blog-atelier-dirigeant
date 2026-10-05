@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Freinte et démarque : les 7 leviers pour stopper l'hémorragie silencieuse"
-date: 2026-10-01 09:00:00 +0200
+date: 2026-09-01 09:00:00 +0200
 categories: rentabiliser
 tags: []
 image: /assets/images/uploads/freinte-et-demarque.jpg
